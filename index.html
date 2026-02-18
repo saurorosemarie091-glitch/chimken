@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie Love Card 💌💐</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .page, .specialMessagePage, .finalPage {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+
+        .text {
+            font-size: 32px;
+            color: #ff69b4;
+            margin-top: 25px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        button {
+            margin-top: 35px;
+            padding: 18px 36px;
+            font-size: 24px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff85c1;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #ffb3d1;
+        }
+
+        .specialMessage {
+            font-size: 26px;
+            color: #d63384;
+            line-height: 1.6;
+            padding: 30px;
+            border-radius: 20px;
+            background: #fff0f5;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .highlight {
+            animation: pulse 2s infinite;
+            color: #ff1493;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            animation: float 5s infinite linear;
+            border-radius: 4px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
+            100% { transform: translateY(-400px) rotate(45deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page" style="display:flex;">
+    <img id="jpg-bouquet" src="bouquetflowers.jpg" alt="Flowers bouquet">
+    <div class="text" id="introText">I have a special message for you...</div>
+    <button onclick="showNextPage(1)">Click here 💌</button>
+    <!-- Floating hearts -->
+    <div class="heart" style="left:15%; animation-duration:6s;"></div>
+    <div class="heart" style="left:45%; animation-duration:5s;"></div>
+    <div class="heart" style="left:75%; animation-duration:7s;"></div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="specialMessagePage">
+    <div class="specialMessage" id="msg1">
+        Hey Azi, I don’t know where to start. I didn’t expect that I would get to know you better in just four months, but I still remember our first conversation.
+    </div>
+    <button onclick="showNextPage(2)">>></button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="specialMessagePage">
+    <div class="specialMessage" id="msg2">
+        November 5, 2025–it was just a Wednesday, typically a normal day for me... I didn't think anything special would happen that day but I was wrong. I didn't expect to meet you that day, Azi. When we first talked, I honestly thought that your name was Winter because your replies were so cold.
+    </div>
+    <button onclick="showNextPage(3)">>></button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="specialMessagePage">
+    <div class="specialMessage" id="msg3">
+        As we still kept talking, I realized and understood you were just tired from revising your research paper but you still made time to talk to me that day. In that moment, it was enough to make the day memorable for us.
+    </div>
+    <button onclick="showNextPage(4)">>></button>
+</div>
+
+<!-- PAGE 5 (LAST MESSAGE) -->
+<div id="page5" class="specialMessagePage">
+    <div class="specialMessage highlight" id="msg4">
+        In the past days, weeks, and months, I’ve come to appreciate you even more. I realize how lucky I am to have you—someone who is always ready to listen and accepts me despite my flaws and imperfections. Thank you for always being there for me, Azi. You're my safe place, my bestfriend, my favorite enemy, especially my hun. I hope that the bond we share continues to grow stronger. I will also do my best to be a better person and not be a burden. Also, advance congratulations on your upcoming graduation this month! I'm so proud of you. Keep fighting!
+    </div>
+    <button onclick="showNextPage(5)">>></button>
+</div>
+
+<!-- FINAL IMAGE PAGE -->
+<div id="page6" class="finalPage">
+    <img id="finalImg" src="https://i.pinimg.com/474x/e8/be/2a/e8be2aaaa463366b948a1fb0c933cbcf.jpg" alt="cutie">
+    <!-- Floating hearts on final page -->
+    <div class="heart" style="left:10%; animation-duration:6s;"></div>
+    <div class="heart" style="left:40%; animation-duration:5s;"></div>
+    <div class="heart" style="left:70%; animation-duration:7s;"></div>
+</div>
+
+<script>
+window.onload = () => {
+    setTimeout(() => { 
+        document.getElementById("jpg-bouquet").style.opacity = 1; 
+        document.getElementById("jpg-bouquet").style.transform = "scale(1.05)";
+    }, 100);
+    setTimeout(() => { 
+        document.getElementById("introText").style.opacity = 1; 
+    }, 500);
+}
+
+function showNextPage(currentPage) {
+    const nextPage = currentPage + 1;
+    document.getElementById(`page${currentPage}`).style.display = "none";
+    const next = document.getElementById(`page${nextPage}`);
+    if(next){
+        next.style.display = "flex";
+        const msg = next.querySelector('.specialMessage');
+        const img = next.querySelector('img'); // Final image
+        if(img) setTimeout(() => { 
+            img.style.opacity = 1; 
+            img.style.transform = "scale(1.05)"; 
+        }, 300);
+        if(msg) setTimeout(() => { msg.style.opacity = 1; }, 300);
+    }
+}
+</script>
+
+</body>
+</html>
